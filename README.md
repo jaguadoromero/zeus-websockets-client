@@ -25,7 +25,7 @@ Vue.use(new ZeusWebsockets({
 > Desde cualquier componente de Vue se puede acceder al objeto `this.$socket` desde donde se realizarán las acciones.
 
 ## Emitir mensaje 
-> **this.$socket.emit(*(*EventName*, *data*, **[*channel*]**)
+> **this.$socket.emit**((*EventName*, *data*, **[*channel*]**)
 
 *EventName*: Nombre del evento  
 
