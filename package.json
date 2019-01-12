@@ -11,5 +11,10 @@
         "zeus-websockets"
     ],
     "author": "Juan Aguado",
-    "license": "ISC"
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jaguadoromero/zeus-websockets-client"
+      },
+      "homepage": "https://github.com/jaguadoromero/zeus-websockets-client"
 }
