@@ -1,14 +1,20 @@
 export default class VueZeusWebsockets {
     constructor(config) {
-        this.websocket = new WebSocket(config.connection);
+        this.config = config;
+        this.websocket = null;
         this.events = {};
+        this.timeoutReconnect = null;
+
+        this.connect();
     }
 
     install(Vue) {
         Vue.prototype.$socket = this;
     }
 
-    onConnect(callback) {
+    connect() {
+        this.websocket = new WebSocket(this.config.connection);
+
         this.websocket.onopen = () => {
             this.websocket.onmessage = (e) => {
                 var data = JSON.parse(e.data);
@@ -20,8 +26,19 @@ export default class VueZeusWebsockets {
                 }
             };
 
-            callback();
+            this.callbackOpen();
         }
+
+        this.websocket.onclose = (e) => {
+            clearTimeout(this.timeoutReconnect);
+            this.timeoutReconnect = setTimeout(() => {
+                this.connect();
+            }, 1000);
+        }
+    }
+
+    onConnect(callback) {
+        this.callbackOpen = callback;
     }
 
     join(channel) {
