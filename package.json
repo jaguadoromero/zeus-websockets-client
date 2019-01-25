@@ -1,6 +1,6 @@
 {
     "name": "vue-zeus-websockets",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Websockets Vue client for Zeus Websockets server",
     "main": "index.js",
     "scripts": {

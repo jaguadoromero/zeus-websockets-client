@@ -4,6 +4,7 @@ export default class VueZeusWebsockets {
         this.websocket = null;
         this.events = {};
         this.timeoutReconnect = null;
+        this.callbackOpen = null;
 
         this.connect();
     }
@@ -26,7 +27,9 @@ export default class VueZeusWebsockets {
                 }
             };
 
-            this.callbackOpen();
+            if (this.callbackOpen != null) {
+                this.callbackOpen();
+            }
         }
 
         this.websocket.onclose = (e) => {
