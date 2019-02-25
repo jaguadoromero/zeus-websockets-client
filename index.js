@@ -27,7 +27,7 @@ export default class VueZeusWebsockets {
                 }
             };
 
-            if (this.callbackOpen != null) {
+            if (this.callbackOpen != null && this.callbackOpen != null) {
                 this.callbackOpen();
             }
         }

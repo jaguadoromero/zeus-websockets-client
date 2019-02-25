@@ -1,5 +1,5 @@
 # Vue Zeus Websocket client
-Plugin para Vue para usar websockets con [Zeus Websockets Server](https://github.com/jaguadoromero/zeus-websockets-client)
+Plugin para Vue para usar websockets con [Zeus Websockets Server](https://repositorios.artvisual.net/jaguado/ZeusWebsockets)
 
 ## Instalación
 Mediante npm:
